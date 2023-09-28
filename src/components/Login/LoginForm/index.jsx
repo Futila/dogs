@@ -4,8 +4,12 @@ import useForm from "../../../hooks/useForm";
 
 import { UserContext } from "../../../context/UserContext";
 
+import Error from "../../../helpers/Error";
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
+
+import styles from "./LoginForm.module.css";
+import stylesButton from "../../Forms/Button.module.css";
 
 function LoginForm() {
   const username = useForm();
@@ -21,9 +25,9 @@ function LoginForm() {
     }
   };
   return (
-    <section>
-      <h1>Login</h1>
-      <form action="" onSubmit={handleLogin}>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
+      <form className={styles.form} onSubmit={handleLogin}>
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Password" type="password" name="password" {...password} />
 
@@ -33,9 +37,19 @@ function LoginForm() {
           <Button>Login</Button>
         )}
 
-        {error && <p>{error}</p>}
+        <Error error={error} />
       </form>
-      <Link to="/login/create">Cadastro</Link>
+      <Link to="/login/lost" className={styles.lost}>
+        Forgot password?
+      </Link>
+
+      <div className={styles.registration}>
+        <h2 className={styles.subtitle}>Resgister</h2>
+        <p>Don't have an account yet? register on the website.</p>
+        <Link className={stylesButton.button} to="/login/create">
+          Create new account
+        </Link>
+      </div>
     </section>
   );
 }

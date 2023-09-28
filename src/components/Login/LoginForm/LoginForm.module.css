@@ -1,0 +1,47 @@
+.form {
+  margin-bottom: 2rem;
+}
+
+
+.lost {
+  display: inline-block;
+  color: #666;
+  padding: 0.5rem 0;
+  line-height: 1;
+}
+
+.lost::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: currentColor;
+  display: block;
+
+}
+
+
+.registration {
+  margin-top: 4rem;
+}
+
+.registration p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.subtitle {
+  font-family: var(--type-second);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.subtitle::after{
+  content: "";
+  display: block;
+  background: #ddd;
+  height: 0.5rem;
+  width: 3rem;
+  border-radius: 0.2rem;
+}
+
