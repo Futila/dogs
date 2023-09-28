@@ -13,6 +13,18 @@ const TOKEN_POST = (body) => {
   };
 };
 
+const TOKEN_VALIDATE_POST = (token) => {
+  return {
+    url: API_URL + "/jwt-auth/v1/token/validate",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    },
+  };
+};
+
 const USER_GET = (token) => {
   return {
     url: API_URL + "/api/user",
@@ -25,4 +37,4 @@ const USER_GET = (token) => {
   };
 };
 
-export { TOKEN_POST, USER_GET };
+export { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST };
