@@ -37,4 +37,17 @@ const USER_GET = (token) => {
   };
 };
 
-export { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST };
+const USER_POST = (body) => {
+  return {
+    url: API_URL + "/api/user",
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+};
+
+export { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST, USER_POST };

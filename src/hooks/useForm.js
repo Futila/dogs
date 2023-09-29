@@ -13,9 +13,9 @@ const useForm = (type) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(null);
 
-  const validate = (values) => {
-    if (type === false) return true;
-    if (values.length === 0) {
+  const validate = (value) => {
+    if (type === false) return true; //in case we dont want validate the field
+    if (value.length === 0) {
       setError("fill in a value.");
       return false;
     } else if (types[type] && !types[type].regex.test(value)) {
