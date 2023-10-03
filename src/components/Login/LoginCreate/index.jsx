@@ -2,16 +2,20 @@ import React from "react";
 
 import { USER_POST } from "../../../services/api";
 import useForm from "../../../hooks/useForm";
+import useFetch from "../../../hooks/useFetch";
 import { UserContext } from "../../../context/UserContext";
 
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
+import Error from "../../../helpers/Error";
 
 function LoginCreate() {
-  const { userLogin } = React.useContext(UserContext);
   const username = useForm();
   const email = useForm("email");
   const password = useForm();
+
+  const { userLogin } = React.useContext(UserContext);
+  const { loading, error, request } = useFetch();
 
   const handleCreateAccount = async (event) => {
     event.preventDefault();
@@ -22,11 +26,8 @@ function LoginCreate() {
       password: password.value,
     });
 
-    const response = await fetch(url, options);
+    const { response } = await request(url, options);
     if (response.ok) userLogin(username.value, password.value);
-    const json = await response.json();
-
-    console.log(response);
   };
   return (
     <section className="animeLeft">
@@ -35,7 +36,12 @@ function LoginCreate() {
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Password" type="password" name="password" {...password} />
-        <Button>Create account</Button>
+        {loading ? (
+          <Button disabled>Creating account</Button>
+        ) : (
+          <Button>Create account</Button>
+        )}
+        <Error error={error} />
       </form>
     </section>
   );
