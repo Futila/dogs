@@ -6,6 +6,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import User from "./components/User";
+import ProtectedRoute from "./helpers/ProtectedRoute";
 
 import "./App.css";
 
@@ -18,6 +20,14 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
+            <Route
+              path="/account/*"
+              element={
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
           <Footer />
         </UserStorage>

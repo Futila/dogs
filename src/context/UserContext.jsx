@@ -53,20 +53,23 @@ const UserStorage = ({ children }) => {
 
   useEffect(() => {
     async function autoLogin() {
-      try {
-        setError(null);
-        setLoading(true);
-        const token = window.localStorage.getItem("token");
-        if (token) {
+      const token = window.localStorage.getItem("token");
+      if (token) {
+        try {
+          setError(null);
+          setLoading(true);
+
           const { url, options } = TOKEN_VALIDATE_POST(token);
           const tokenResponse = await fetch(url, options);
           if (!tokenResponse.ok) throw new Error(`Invalid Token`);
           await getUser(token);
+        } catch (err) {
+          userLogout();
+        } finally {
+          setLoading(false);
         }
-      } catch (err) {
-        userLogout();
-      } finally {
-        setLoading(false);
+      } else {
+        setLogin(false);
       }
     }
 
