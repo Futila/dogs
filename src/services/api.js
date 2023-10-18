@@ -50,4 +50,17 @@ const USER_POST = (body) => {
   };
 };
 
-export { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST, USER_POST };
+const PHOTO_POST = (formData, token) => {
+  return {
+    url: API_URL + "/api/photo",
+    options: {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      body: formData,
+    },
+  };
+};
+
+export { TOKEN_POST, USER_GET, TOKEN_VALIDATE_POST, USER_POST, PHOTO_POST };
