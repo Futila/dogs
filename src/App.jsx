@@ -29,7 +29,7 @@ function App() {
               }
             />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </UserStorage>
       </BrowserRouter>
     </div>

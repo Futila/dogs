@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Spectral:wght@700&display=swap');
 
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -14,16 +14,21 @@ body {
   --type-second: "Spectral", georgia;
   font-family: var(--type-first);
   -webkit-font-smoothing: antialiased;
-  
+
 
 }
 
-h1, h2, h3,h4, p{
+h1,
+h2,
+h3,
+h4,
+p {
   margin: 0px;
 
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -35,7 +40,8 @@ img {
   max-width: 100%;
 }
 
-button, input {
+button,
+input {
   display: block;
   font-size: 1rem;
   font-family: var(--type-first);
@@ -56,7 +62,7 @@ a {
   z-index: 1;
 }
 
-.title::after{
+.title::after {
   content: "";
   display: block;
   height: 1.5rem;
@@ -76,8 +82,8 @@ a {
   animation: animeLeft .3s forwards;
 }
 
-@keyframes animeLeft{
-  to{
+@keyframes animeLeft {
+  to {
     opacity: 1;
     transform: initial;
   }
@@ -88,4 +94,9 @@ a {
   padding: 0 1rem;
   margin: 0 auto;
 
+}
+
+
+.mainContainer {
+  margin-top: 2rem;
 }

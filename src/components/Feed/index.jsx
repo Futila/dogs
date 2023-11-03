@@ -1,5 +1,12 @@
+import FeedPhotos from "./FeedPhotos";
+import FeedModal from "./FeedModal";
+
 const Feed = () => {
-  return <p>Minhas fotos </p>;
+  return (
+    <section className="">
+      <FeedPhotos />
+    </section>
+  );
 };
 
 export default Feed;
