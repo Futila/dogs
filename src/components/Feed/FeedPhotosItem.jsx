@@ -1,8 +1,11 @@
 import styles from "./FeedPhotosItem.module.css";
 
-const FeedPhotosItem = ({ photo }) => {
+const FeedPhotosItem = ({ photo, setModalPhoto }) => {
+  const handleClick = () => {
+    setModalPhoto(photo);
+  };
   return (
-    <li className={styles.photo}>
+    <li className={styles.photo} onClick={handleClick}>
       <img src={photo.src} alt={photo.title} />
       <span className={styles.visualizacao}>{photo.acessos}</span>
     </li>
