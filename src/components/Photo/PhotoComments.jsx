@@ -13,8 +13,11 @@ const PhotoComments = (props) => {
     commentsSection.current.scrollTop = commentsSection.current.scrollHeight;
   }, [comments]);
   return (
-    <div className={styles.comments}>
-      <ul ref={commentsSection} className={styles.comments}>
+    <>
+      <ul
+        ref={commentsSection}
+        className={`${styles.comments} ${props.single ? styles.single : ""}`}
+      >
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
             <b>{comment.comment_author}:</b>
@@ -22,8 +25,14 @@ const PhotoComments = (props) => {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={props.id} setComments={setComments} />}
-    </div>
+      {login && (
+        <PhotoCommentsForm
+          single={props.single}
+          id={props.id}
+          setComments={setComments}
+        />
+      )}
+    </>
   );
 };
 export default PhotoComments;
