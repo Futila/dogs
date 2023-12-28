@@ -4,6 +4,7 @@ import LoginForm from "./LoginForm";
 import LoginCreate from "./LoginCreate";
 import LogiPasswordLost from "./LoginPasswordLost";
 import LoginPasswordReset from "./LoginPasswordReset";
+import NotFound from "../NotFound";
 
 import { UserContext } from "../../context/UserContext";
 
@@ -21,6 +22,7 @@ function Login() {
           <Route path="create" element={<LoginCreate />} />
           <Route path="lost" element={<LogiPasswordLost />} />
           <Route path="reset" element={<LoginPasswordReset />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>
