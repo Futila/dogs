@@ -40,7 +40,7 @@ function LoginForm() {
           <Button>Login</Button>
         )}
 
-        <Error error={error} />
+        <Error error={error && "User or password incorrects."} />
       </form>
       <Link to="/login/lost" className={styles.lost}>
         Forgot password?

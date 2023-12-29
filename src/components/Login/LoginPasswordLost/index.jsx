@@ -23,7 +23,7 @@ function LogiPasswordLost() {
     }
   }
   return (
-    <section>
+    <section className="animeLeft">
       <Head title="Lost password" />
       <h1 className="title">Lost your password?</h1>
 
