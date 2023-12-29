@@ -141,6 +141,18 @@ const PASSWORD_RESET = (body) => {
   };
 };
 
+const STATS_GET = () => {
+  return {
+    url: API_URL + "/api/stats",
+    options: {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + window.localStorage.getItem("token"),
+      },
+    },
+  };
+};
+
 export {
   TOKEN_POST,
   USER_GET,
@@ -153,4 +165,5 @@ export {
   PHOTO_DELETE,
   PASSWORD_LOST,
   PASSWORD_RESET,
+  STATS_GET,
 };
