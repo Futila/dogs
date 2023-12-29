@@ -7,6 +7,8 @@ import Error from "../../helpers/Error";
 import Loading from "../../helpers/Loading";
 import PhotoContent from "./PhotoContent";
 
+import Head from "../../helpers/Head";
+
 const Photo = () => {
   //get data loading error request from useFetch hook
   const { data, loading, error, request } = useFetch();
@@ -22,6 +24,7 @@ const Photo = () => {
   if (data)
     return (
       <section className="container mainContainer">
+        <Head title={data.photo.title} />
         <PhotoContent single={true} data={data} />
       </section>
     );

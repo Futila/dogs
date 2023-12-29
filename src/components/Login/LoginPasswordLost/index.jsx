@@ -5,6 +5,7 @@ import { PASSWORD_LOST } from "../../../services/api";
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
 import Error from "../../../helpers/Error";
+import Head from "../../../helpers/Head";
 
 function LogiPasswordLost() {
   const login = useForm();
@@ -23,6 +24,7 @@ function LogiPasswordLost() {
   }
   return (
     <section>
+      <Head title="Lost password" />
       <h1 className="title">Lost your password?</h1>
 
       {data ? (

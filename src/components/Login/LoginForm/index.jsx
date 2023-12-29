@@ -8,6 +8,8 @@ import Error from "../../../helpers/Error";
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
 
+import Head from "../../../helpers/Head";
+
 import styles from "./LoginForm.module.css";
 import stylesButton from "../../Forms/Button.module.css";
 
@@ -26,6 +28,7 @@ function LoginForm() {
   };
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleLogin}>
         <Input label="User" type="text" name="username" {...username} />

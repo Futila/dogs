@@ -8,6 +8,7 @@ import { PASSWORD_RESET } from "../../../services/api";
 import Input from "../../Forms/Input";
 import Button from "../../Forms/Button";
 import Error from "../../../helpers/Error";
+import Head from "../../../helpers/Head";
 
 function LoginPasswordReset() {
   const [key, setKey] = useState("");
@@ -46,6 +47,7 @@ function LoginPasswordReset() {
 
   return (
     <div>
+      <Head title="Reset password" />
       <h1 className="title">Reset the password</h1>
       <form onSubmit={handleSubmit}>
         <Input

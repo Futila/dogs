@@ -1,5 +1,10 @@
+import Head from "../../helpers/Head";
 const UserStats = () => {
-  return <p>estatisticas</p>;
+  return (
+    <div>
+      <Head title="Stats" />
+    </div>
+  );
 };
 
 export default UserStats;
