@@ -128,6 +128,19 @@ const PASSWORD_LOST = (body) => {
   };
 };
 
+const PASSWORD_RESET = (body) => {
+  return {
+    url: API_URL + "/api/password/reset",
+    options: {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    },
+  };
+};
+
 export {
   TOKEN_POST,
   USER_GET,
@@ -139,4 +152,5 @@ export {
   COMMENT_POST,
   PHOTO_DELETE,
   PASSWORD_LOST,
+  PASSWORD_RESET,
 };

@@ -12,7 +12,7 @@ function LogiPasswordLost() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (login.validate) {
+    if (login.validate()) {
       const { url, options } = PASSWORD_LOST({
         login: login.value,
         url: window.location.href.replace("lost", "reset"),
