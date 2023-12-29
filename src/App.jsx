@@ -17,27 +17,30 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <Route
-              path="account/*"
-              element={
-                <ProtectedRoute>
-                  <User />
-                </ProtectedRoute>
-              }
-            />
+          <main className="AppBOdy">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="login/*" element={<Login />} />
+              <Route
+                path="account/*"
+                element={
+                  <ProtectedRoute>
+                    <User />
+                  </ProtectedRoute>
+                }
+              />
 
-            <Route path="photo/:id" element={<Photo />} />
-            <Route path="profile/:user" element={<UserProfile />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          {/* <Footer /> */}
+              <Route path="photo/:id" element={<Photo />} />
+              <Route path="profile/:user" element={<UserProfile />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+
+          <Footer />
         </UserStorage>
       </BrowserRouter>
     </div>

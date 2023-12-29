@@ -48,7 +48,7 @@ function LoginForm() {
 
       <div className={styles.registration}>
         <h2 className={styles.subtitle}>Resgister</h2>
-        <p>Don't have an account yet? register on the website.</p>
+        <p>Dont have an account yet? register on the website.</p>
         <Link className={stylesButton.button} to="/login/create">
           Create new account
         </Link>
